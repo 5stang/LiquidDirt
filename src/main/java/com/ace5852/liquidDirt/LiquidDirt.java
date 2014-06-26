@@ -37,6 +37,7 @@ public class LiquidDirt
     //Some Config Variables
     public static boolean causesSlowness;
     public static boolean causesBlindness;
+    public static boolean enableCrafting;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -54,19 +55,28 @@ public class LiquidDirt
         FluidRegistry.registerFluid(liquidDirt);
         mud = new BlockLiquidDirt(liquidDirt, Material.water).setBlockName("Mud");
 
+
         GameRegistry.registerBlock(mud, MODID + "_" + mud.getUnlocalizedName());
         liquidDirt.setUnlocalizedName(mud.getUnlocalizedName());
 
-        LanguageRegistry.addName(mud, "Mud");
-
-        mudBucket = new ItemDirtBucket(mud);
+        mudBucket = new ItemDirtBucket(mud).setUnlocalizedName("mudBucket");
 
         GameRegistry.registerItem(mudBucket, "mudBucket");
-        LanguageRegistry.addName(mudBucket, "Mud Bucket");
+
+        System.out.println(mud.getUnlocalizedName());
 
         FluidContainerRegistry.registerFluidContainer(new FluidStack(liquidDirt, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(mudBucket), new ItemStack(Items.bucket));
         MinecraftForge.EVENT_BUS.register(new BucketFillEvent());
+
+        System.out.println(mudBucket.getUnlocalizedName());
+
         MinecraftForge.EVENT_BUS.register(new TextureEvent());
+
+        //Crafting
+        if (enableCrafting)
+        {
+            GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Items.potionitem, 1, 0), new ItemStack(Blocks.dirt)});
+        }
     }
 
     @EventHandler
