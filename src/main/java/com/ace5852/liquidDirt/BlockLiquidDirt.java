@@ -110,8 +110,14 @@ public class BlockLiquidDirt extends BlockFluidClassic implements ITileEntityPro
         if (entity instanceof EntityLivingBase)
         {
             EntityLivingBase ent = (EntityLivingBase) entity;
-            ent.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 200, 1));
-            ent.addPotionEffect(new PotionEffect(Potion.blindness.id, 100, 0));
+            if (LiquidDirt.causesSlowness)
+            {
+                ent.addPotionEffect(new PotionEffect(Potion.moveSlowdown.id, 200, 1));
+            }
+            if (LiquidDirt.causesBlindness)
+            {
+                ent.addPotionEffect(new PotionEffect(Potion.blindness.id, 100, 0));
+            }
         }
     }
 

@@ -34,10 +34,14 @@ public class LiquidDirt
     public static Block mud;
     public static Item mudBucket;
 
+    //Some Config Variables
+    public static boolean causesSlowness;
+    public static boolean causesBlindness;
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        ConfigHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @EventHandler
@@ -62,6 +66,7 @@ public class LiquidDirt
 
         FluidContainerRegistry.registerFluidContainer(new FluidStack(liquidDirt, FluidContainerRegistry.BUCKET_VOLUME), new ItemStack(mudBucket), new ItemStack(Items.bucket));
         MinecraftForge.EVENT_BUS.register(new BucketFillEvent());
+        MinecraftForge.EVENT_BUS.register(new TextureEvent());
     }
 
     @EventHandler
