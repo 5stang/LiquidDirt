@@ -77,6 +77,8 @@ public class LiquidDirt
         {
             GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Items.potionitem, 1, 0), new ItemStack(Blocks.dirt)});
         }
+
+        GameRegistry.registerTileEntity(TileEntityDirt.class, MODID+"dirt");
     }
 
     @EventHandler
