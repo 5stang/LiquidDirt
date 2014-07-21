@@ -37,7 +37,8 @@ public class LiquidDirt
     //Some Config Variables
     public static boolean causesSlowness;
     public static boolean causesBlindness;
-    public static boolean enableCrafting;
+    public static boolean enableCraftingIce;
+    public static boolean enableCraftingWater;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -73,9 +74,13 @@ public class LiquidDirt
         MinecraftForge.EVENT_BUS.register(new TextureEvent());
 
         //Crafting
-        if (enableCrafting)
+        if (enableCraftingWater)
         {
-            GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Items.potionitem, 1, 0), new ItemStack(Blocks.dirt)});
+            GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Items.potionitem, 1, 0), new ItemStack(Blocks.dirt), new ItemStack(Items.bucket)});
+        }
+        if (enableCraftingIce)
+        {
+            GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Blocks.ice), new ItemStack(Blocks.dirt), new ItemStack(Items.bucket)});
         }
 
         GameRegistry.registerTileEntity(TileEntityDirt.class, MODID+"dirt");

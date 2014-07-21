@@ -5,8 +5,11 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemBucket;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 
 public class ItemDirtBucket extends ItemBucket
 {

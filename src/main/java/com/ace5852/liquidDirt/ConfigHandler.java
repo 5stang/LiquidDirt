@@ -15,7 +15,8 @@ public class ConfigHandler
 
         LiquidDirt.causesSlowness = config.get("Effects", "Slowness", true).getBoolean(true);
         LiquidDirt.causesBlindness = config.get("Effects", "Blindness", false).getBoolean(false);
-        LiquidDirt.enableCrafting = config.get("Crafting", "crafting", true).getBoolean(true);
+        LiquidDirt.enableCraftingIce = config.get("Crafting", "iceblock", true).getBoolean(true);
+        LiquidDirt.enableCraftingWater = config.get("Crafting", "waterbottle", true).getBoolean(true);
 
         config.save();
     }
