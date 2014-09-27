@@ -78,7 +78,7 @@ public class BlockLiquidDirt extends BlockFluidClassic implements ITileEntityPro
     {
         mudStill = register.registerIcon("liquiddirt:mudStill");
         mudFlowing = register.registerIcon("liquiddirt:mudFlowing");
-        LiquidDirt.liquidDirt.seticons(mudStill, mudFlowing);
+        LiquidDirt.liquidDirt.setIcons(mudStill, mudFlowing);
     }
 
     @Override
