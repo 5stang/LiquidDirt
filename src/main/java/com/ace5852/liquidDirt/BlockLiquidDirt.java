@@ -1,5 +1,7 @@
 package com.ace5852.liquidDirt;
 
+import com.ace5852.liquidDirt.LiquidDirt;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -76,6 +78,7 @@ public class BlockLiquidDirt extends BlockFluidClassic implements ITileEntityPro
     {
         mudStill = register.registerIcon("liquiddirt:mudStill");
         mudFlowing = register.registerIcon("liquiddirt:mudFlowing");
+        LiquidDirt.liquidDirt.setIcons(mudStill, mudFlowing);
     }
 
     @Override
