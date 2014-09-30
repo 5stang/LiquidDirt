@@ -77,6 +77,7 @@ public class LiquidDirt
         if (enableCraftingWater)
         {
             GameRegistry.addShapelessRecipe(new ItemStack(mudBucket, 1), new Object[]{new ItemStack(Items.potionitem, 1, 0), new ItemStack(Blocks.dirt), new ItemStack(Items.bucket)});
+            cpw.mods.fml.common.FMLCommonHandler.instance().bus().register(new CraftingEventHandler());
         }
         if (enableCraftingIce)
         {
@@ -85,11 +86,4 @@ public class LiquidDirt
 
         GameRegistry.registerTileEntity(TileEntityDirt.class, MODID+"dirt");
     }
-
-    @EventHandler
-    public void modsLoaded(FMLPostInitializationEvent event)
-    {
-
-    }
-
 }
