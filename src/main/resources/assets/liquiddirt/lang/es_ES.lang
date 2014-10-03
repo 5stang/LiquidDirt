@@ -1,3 +1,5 @@
 tile.Mud.name=Tierra Liquida (Lodo)
 
 item.mudBucket.name=Cubeta de Tierra Liquida (Lodo)
+
+fluid.tile.Mud=Tierra Liquida (Lodo)

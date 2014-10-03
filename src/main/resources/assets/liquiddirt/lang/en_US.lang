@@ -1,3 +1,5 @@
 tile.Mud.name=Liquid Dirt (Mud)
 
 item.mudBucket.name=Bucket of Liquid Dirt (Mud)
+
+fluid.tile.Mud=Liquid Dirt (Mud)

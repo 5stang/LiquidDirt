@@ -1,3 +1,5 @@
 tile.Mud.name=Schlammige Erde
 
 item.mudBucket.name=Eimer mit Schlammiger Erde
+
+fluid.tile.Mud=Schlammige Erde
