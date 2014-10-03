@@ -17,6 +17,7 @@ public class ConfigHandler
         LiquidDirt.causesBlindness = config.get("Effects", "Blindness", false).getBoolean(false);
         LiquidDirt.enableCraftingIce = config.get("Crafting", "iceblock", true).getBoolean(true);
         LiquidDirt.enableCraftingWater = config.get("Crafting", "waterbottle", true).getBoolean(true);
+        LiquidDirt.enableCraftingBucket = config.get("Crafting", "waterbucket", true).getBoolean(true);
 
         config.save();
     }
