@@ -38,6 +38,21 @@ public class BlockLiquidDirt extends BlockFluidClassic implements ITileEntityPro
 //      setTickRandomly(true);
     }
 
+    @Override
+    public int getQuantaValue(IBlockAccess world, int x, int y, int z)
+    {
+        if (world.getTileEntity(x,y,z) != null)
+        {
+            TileEntityDirt ted = (TileEntityDirt) world.getTileEntity(x, y, z);
+            if (!ted.getCanSpread())
+            {
+                return -1;
+            }
+        }
+
+        return super.getQuantaValue(world,x,y,z);
+    }
+
 //    @Override
 //    public void updateTick(World world, int x, int y, int z, Random rand)
 //    {
@@ -104,6 +119,11 @@ public class BlockLiquidDirt extends BlockFluidClassic implements ITileEntityPro
     {
         world.removeTileEntity(x,y,z);
         world.setBlock(x,y,z, Blocks.dirt);
+    }
+
+    public static void setMeta(World world, int x, int y, int z)
+    {
+        world.setBlockMetadataWithNotify(x,y,z,0,2);
     }
 
     @Override
